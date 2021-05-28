@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mr+Dafoe');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:900');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+
+    /*background: #090909;*/
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    background-color: #181818;
+    height: 100vh;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.title {
+    position: relative;
+}
+
+.retro-h1 {
+    position: relative;
+    width: 690px;
+    background-image: linear-gradient(#e56cce 0%, #d895db 46%, #bfa5f8 50%, #ffffff 54%, #39e9e2 58%, #182e36 90%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 4px #232222;
+    font-size: 200px;
+    font-family: 'Titillium Web', sans-serif;
+    font-style: italic;
+    margin: 0;
+    line-height: 1;
+}
+
+.retro-h1:before {
+    content: 'shorter';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-image: linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+    background-position:-680px 0;
+    background-clip: text;
+    text-stroke: 0;
+    padding-right: 300px;
+    animation-name: slide_effect;
+    animation-duration: 6s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.retro-h3 {
+    position: absolute;
+    left: 80px;
+    margin: 0px;
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 160px;
+    color: #F975F7 ;
+    transform:rotate(-15deg);
+    -ms-transform:rotate(-15deg); /* IE 9 */
+    transform:rotate(-15deg); /* Safari and Chrome */
+    margin-left: 400px;
+    margin-top: -120px;
+    text-stroke: 1px #f008b7;
+    filter: drop-shadow(2px 2px 20px #f008b7);
+    z-index: 20;
+}
+
+.retro-h3 {
+    text-stroke: 4px #f008b7;
+}
+
+.shorter-form-input {
+    z-index: 30;
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+}
+
+.shorter-form-input input {
+    outline: none;
+    margin: 15px;
+    width: 500px;
+    padding: 7px 0 7px 14px;
+    border: 3px solid rgb(150, 150, 150);
+    box-shadow: 0px 0px 0px 1px rgb(90 90 90), inset 0px 0px 0px 1px rgb(90 90 90), 1px 2px 0px 2px rgb(100 100 100);
+    border-radius: 0.3em;
+    color: rgb(50, 50, 50);
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    transition: all ease-in 0.2s;
+}
+
+.shorter-form-input_loading input {
+    background-color: rgb(50, 50, 50);
+
+}
+
+.error-container {
+    position: absolute;
+    padding: 10px;
+    background-color: rgb(196, 58, 58);
+    border-radius: .3em;
+    margin: 15px;
+}
+
+.error-message {
+    padding-left: 8px;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: white;
+}
+.error-container::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50px;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgb(196, 58, 58) transparent;
+}
+
+.shorter-form-btn {
+    padding: 7px 15px;
+    cursor: pointer;
+    margin: 15px;
+    outline: none;
+    border: 3px solid white;
+    box-shadow: 0px 0px 0px 1px rgb(90 90 90), inset 0px 0px 0px 1px rgb(90 90 90), 0px 2px 0px 2px rgb(100 100 100);
+    text-shadow: 0px -1px rgb(90 90 90), -1px 0px rgb(90 90 90);
+    border-radius: 0.3em;
+    color: white;
+    background-color: rgb(24, 24, 24);
+    font-family: "M PLUS 1p", sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+}
+
+.shorter-form-btn_disable {
+    cursor: initial;
+    background: #3d3d3d;
+}
+
+.shorter-form-btn:hover {
+    transform: scale(1.02);
+}
+
+.result {
+    padding: 20px;
+    width: 520px;
+    border: 3px solid rgb(70, 70, 70);
+    box-shadow: 3px 3px 0px 3px rgb(100 100 100);
+    border-radius: .5em;
+    margin: 15px;
+    background: #ffffff;
+}
+
+@media (max-width: 790px) {
+    .retro-h1 {
+        font-size: calc(100vw / 4.3);
+    }
+
+    .retro-h3 {
+        position: absolute;
+        right: 0;
+        bottom: -20px;
+        margin: 0px;
+        font-size: calc(100vw / 4);
+        margin-left: 400px;
+        margin-top: -120px;
+        display: block;
+        left: auto;
+    }
+
+    .container-input {
+        width: calc(100% - 100px);
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .container-input input {
+        width: 100%;
+        margin: 15px 0;
+    }
+}
+
+@keyframes slide_effect {
+    0% {background-position:-680px 0;}
+    10% {background-position:420px 0;}
+    100% {background-position:420px 0;}
+}
